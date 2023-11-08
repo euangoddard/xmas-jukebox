@@ -9,7 +9,9 @@ export interface CelebrationProps {
 
 export const Celebration = component$<CelebrationProps>(
   ({ knownAnswers, clues }) => {
-    const hasCelebrated = useComputed$(() => knownAnswers.size == clues.length);
+    const hasCelebrated = useComputed$(
+      () => knownAnswers.size === clues.length
+    );
     return (
       <div class="celebration">
         {hasCelebrated.value && (
