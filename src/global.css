@@ -1,35 +1,139 @@
-
-
-/**
- * WHAT IS THIS FILE?
- *
- * Globally applied styles. No matter which components are in the page or matching route,
- * the styles in here will be applied to the Document, without any sort of CSS scoping.
- *
- */
 html {
   -webkit-text-size-adjust: 100%;
   -moz-tab-size: 4;
   -o-tab-size: 4;
   tab-size: 4;
-  font-family:
-    ui-sans-serif,
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    "Helvetica Neue",
-    Arial,
-    "Noto Sans",
-    sans-serif,
-    "Apple Color Emoji",
-    "Segoe UI Emoji",
-    "Segoe UI Symbol",
-    "Noto Color Emoji";
+}
+
+:root {
+  --neon-tint-color: #0fff50;
+  --neon-glow-color: #fff;
+  --neon-shadow: 0 0 0.2rem var(--neon-glow-color),
+    0 0 0.2rem var(--neon-glow-color), 0 0 2rem var(--neon-tint-color),
+    0 0 0.8rem var(--neon-tint-color), 0 0 2.8rem var(--neon-tint-color),
+    inset 0 0 1.3rem var(--neon-tint-color);
 }
 
 body {
-  padding: 0;
+  padding: 0 1rem;
   line-height: inherit;
+  font-size: 18px;
+  font-family: "Sacramento", sans-serif;
+  background-color: #010a01;
+  color: var(--neon-glow-color);
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.neonText {
+  color: var(--neon-glow-color);
+  text-shadow:
+    0 0 7px var(--neon-glow-color),
+    0 0 10px var(--neon-glow-color),
+    0 0 21px var(--neon-glow-color),
+    0 0 42px var(--neon-tint-color),
+    0 0 82px var(--neon-tint-color),
+    0 0 92px var(--neon-tint-color),
+    0 0 102px var(--neon-tint-color),
+    0 0 151px var(--neon-tint-color);
+}
+
+h1,
+h2,
+p {
+  font-weight: 400;
+  max-width: 960px;
+  margin: 2rem auto;
+}
+
+h1,
+h2 {
+  text-align: center;
+}
+
+p {
+  font-size: 2.5rem;
+}
+
+h1 {
+  font-size: 6rem;
+  animation: pulsate 1.5s infinite alternate;
+  border: 0.2rem solid var(--neon-glow-color);
+  border-radius: 2rem;
+  padding: 0.4em;
+  box-shadow: var(--neon-shadow);
+}
+
+@media screen and (prefers-reduced-motion) {
+  h1 {
+    animation: none;
+  }
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+hr {
+  box-shadow: var(--neon-shadow);
+  border: 0.1rem solid var(--neon-glow-color);
+  max-width: 960px;
+  margin: 2rem auto;
+  border-radius: 4px;
+  height: 8px;
+}
+
+@keyframes pulsate {
+  100% {
+    text-shadow:
+      0 0 4px var(--neon-glow-color),
+      0 0 11px var(--neon-glow-color),
+      0 0 19px var(--neon-glow-color),
+      0 0 40px var(--neon-tint-color),
+      0 0 80px var(--neon-tint-color),
+      0 0 90px var(--neon-tint-color),
+      0 0 100px var(--neon-tint-color),
+      0 0 150px var(--neon-tint-color);
+  }
+
+  0% {
+    text-shadow:
+      0 0 2px var(--neon-glow-color),
+      0 0 4px var(--neon-glow-color),
+      0 0 6px var(--neon-glow-color),
+      0 0 10px var(--neon-tint-color),
+      0 0 45px var(--neon-tint-color),
+      0 0 55px var(--neon-tint-color),
+      0 0 70px var(--neon-tint-color),
+      0 0 80px var(--neon-tint-color);
+  }
+}
+
+.total-centering {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-link {
+  display: inline-flex;
+  box-shadow: var(--neon-shadow);
+  border: 0.1rem solid var(--neon-glow-color);
+  margin: 0 auto 2rem;
+  border-radius: 4px;
+  padding: 0.5rem 2rem;
+  background-color: rgba(200, 255, 200, 0.5);
+  text-decoration: none;
+  color: var(--neon-glow-color);
+}
+
+.celebration {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
 }
