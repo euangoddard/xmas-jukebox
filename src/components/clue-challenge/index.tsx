@@ -16,16 +16,34 @@ export const ClueChallenge = component$<ClueProps>(
 
     const form = (
       <Form action={checkAnswer}>
-        <input type="text" name="answer" />
-        <input
-          type="hidden"
-          name="clue"
-          value={clue.id}
-          required
-          placeholder="Title of song"
-        />
-        {checkAnswer.value?.failed && <span>Wrong answer!</span>}
-        <button type="submit">Check</button>
+        <div style={{ position: "relative" }}>
+          <input
+            type="text"
+            name="answer"
+            required
+            placeholder={`Title of track ${number}`}
+          />
+          <input type="hidden" name="clue" value={clue.id} />
+
+          <button type="submit" disabled={checkAnswer.isRunning}>
+            Check
+          </button>
+          {checkAnswer.value?.failed && (
+            <aside
+              style={{
+                position: "absolute",
+                top: "100%",
+                left: 0,
+                color: "red",
+                fontFamily: "var(--font-stack-sys)",
+                fontSize: "0.875rem",
+                fontWeight: 500,
+              }}
+            >
+              Wrong answer!
+            </aside>
+          )}
+        </div>
       </Form>
     );
 

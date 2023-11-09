@@ -34,6 +34,9 @@ html {
     0 0 0.2rem var(--neon-glow-color), 0 0 2rem var(--neon-tint-color),
     0 0 0.8rem var(--neon-tint-color), 0 0 2.8rem var(--neon-tint-color),
     inset 0 0 1.3rem var(--neon-tint-color);
+  --font-stack-sys: -apple-system, BlinkMacSystemFont, avenir next, avenir,
+    segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial,
+    sans-serif;
 }
 
 body {
@@ -133,6 +136,11 @@ hr {
       0 0 70px var(--neon-tint-color),
       0 0 80px var(--neon-tint-color);
   }
+}
+
+input,
+button {
+  font-family: var(--font-stack-sys);
 }
 
 .total-centering {
