@@ -86,7 +86,6 @@ p {
 
 h1 {
   font-size: 6rem;
-  animation: pulsate 1.5s infinite alternate;
   border: 0.2rem solid var(--neon-glow-color);
   border-radius: 2rem;
   padding: 0.4em;
@@ -110,32 +109,6 @@ hr {
   margin: 2rem auto;
   border-radius: 4px;
   height: 8px;
-}
-
-@keyframes pulsate {
-  100% {
-    text-shadow:
-      0 0 4px var(--neon-glow-color),
-      0 0 11px var(--neon-glow-color),
-      0 0 19px var(--neon-glow-color),
-      0 0 40px var(--neon-tint-color),
-      0 0 80px var(--neon-tint-color),
-      0 0 90px var(--neon-tint-color),
-      0 0 100px var(--neon-tint-color),
-      0 0 150px var(--neon-tint-color);
-  }
-
-  0% {
-    text-shadow:
-      0 0 2px var(--neon-glow-color),
-      0 0 4px var(--neon-glow-color),
-      0 0 6px var(--neon-glow-color),
-      0 0 10px var(--neon-tint-color),
-      0 0 45px var(--neon-tint-color),
-      0 0 55px var(--neon-tint-color),
-      0 0 70px var(--neon-tint-color),
-      0 0 80px var(--neon-tint-color);
-  }
 }
 
 input,
