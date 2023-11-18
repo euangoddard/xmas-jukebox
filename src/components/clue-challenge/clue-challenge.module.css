@@ -1,0 +1,33 @@
+.error {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  color: red;
+  font-family: var(--font-stack-sys);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.correct {
+  font-size: 1.75rem;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+}
+
+.play {
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  display: inline-flex;
+  font-size: 2rem;
+  justify-content: center;
+  align-items: center;
+  padding: 0 0 0 6px;
+  border: none;
+  box-shadow: var(--neon-shadow);
+  cursor: pointer;
+  margin-right: 1rem;
+}

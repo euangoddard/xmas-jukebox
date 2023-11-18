@@ -2,6 +2,7 @@ import { component$, useSignal } from "@builder.io/qwik";
 import { Form } from "@builder.io/qwik-city";
 import { type Clue } from "~/models/clue";
 import { useCheckAnswer } from "~/routes/play";
+import styles from "./clue-challenge.module.css";
 
 interface ClueProps {
   clue: Clue;
@@ -29,19 +30,7 @@ export const ClueChallenge = component$<ClueProps>(
             Check
           </button>
           {checkAnswer.value?.failed && (
-            <aside
-              style={{
-                position: "absolute",
-                top: "100%",
-                left: 0,
-                color: "red",
-                fontFamily: "var(--font-stack-sys)",
-                fontSize: "0.875rem",
-                fontWeight: 500,
-              }}
-            >
-              Wrong answer!
-            </aside>
+            <aside class={styles.error}>Wrong answer!</aside>
           )}
         </div>
       </Form>
@@ -50,31 +39,22 @@ export const ClueChallenge = component$<ClueProps>(
     return (
       <div>
         <h2>Track {number}</h2>
-        <div style={{ display: "flex", alignItems: "center" }}>
+        <div class={styles.content}>
           <audio src={`/clues/${clue.id}.m4a`} ref={audioRef} />
           <button
-            style={{
-              borderRadius: "50%",
-              width: "3rem",
-              height: "3rem",
-              display: "inline-flex",
-              fontSize: "2rem",
-              justifyContent: "center",
-              alignItems: "center",
-              padding: "0 0 0 6px",
-              border: "none",
-              boxShadow: "var(--neon-shadow)",
-              cursor: "pointer",
-              marginRight: "1rem",
-            }}
+            class={styles.play}
             onClick$={() => audioRef.value!.play()}
             aria-label="Play tune"
           >
             ▶
           </button>
-          {!!correctAnswer || checkAnswer.value?.success
-            ? correctAnswer ?? checkAnswer.value?.answer
-            : form}
+          {!!correctAnswer || checkAnswer.value?.success ? (
+            <span class={styles.correct}>
+              {correctAnswer ?? checkAnswer.value?.answer}
+            </span>
+          ) : (
+            form
+          )}
         </div>
       </div>
     );

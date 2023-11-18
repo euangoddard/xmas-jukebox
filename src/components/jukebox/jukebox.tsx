@@ -2,6 +2,7 @@ import { component$ } from "@builder.io/qwik";
 import { type Clue } from "~/models/clue";
 import { ClueChallenge } from "../clue-challenge";
 import { Celebration } from "../celebration";
+import styles from "./jukebox.module.css";
 
 interface JukeboxProps {
   clues: readonly Clue[];
@@ -11,14 +12,7 @@ interface JukeboxProps {
 export const Jukebox = component$<JukeboxProps>(({ clues, knownAnswers }) => {
   return (
     <>
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "1fr 1fr",
-          maxWidth: "960px",
-          margin: "0 auto 50px",
-        }}
-      >
+      <div class={styles.grid}>
         {clues.map((clue, index) => (
           <ClueChallenge
             clue={clue}

@@ -1,6 +1,7 @@
 import { component$, useComputed$, useVisibleTask$ } from "@builder.io/qwik";
 import { type Clue } from "~/models/clue";
 import { create as createConfetti } from "canvas-confetti";
+import styles from "./celebration.module.css";
 
 export interface CelebrationProps {
   knownAnswers: Map<string, string>;
@@ -13,10 +14,13 @@ export const Celebration = component$<CelebrationProps>(
       () => knownAnswers.size === clues.length
     );
     return (
-      <div class="celebration">
+      <div class={styles.celebration}>
         {hasCelebrated.value && (
           <>
-            <h2>Congratulations! You got all the songs!</h2>
+            <h2>
+              <span class="hidden-sm">Congratulations!</span> You got all the
+              songs!
+            </h2>
             <CelebrationConfetti />
           </>
         )}

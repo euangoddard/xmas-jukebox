@@ -141,6 +141,8 @@ hr {
 input,
 button {
   font-family: var(--font-stack-sys);
+  font-size: 1.25rem;
+  padding: 0.5rem;
 }
 
 .total-centering {
@@ -161,9 +163,12 @@ button {
   color: var(--neon-glow-color);
 }
 
-.celebration {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
+.hidden-sm {
+  display: none;
+}
+
+@media screen and (min-width: 680px) {
+  .hidden-sm {
+    display: unset;
+  }
 }
