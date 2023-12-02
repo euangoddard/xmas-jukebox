@@ -17,6 +17,12 @@ export const RouterHead = component$(() => {
       <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
       <link rel="icon" type="image/png" href="/favicon.png" />
 
+      <meta property="og:title" content="Xmas Jukebox" />
+      <meta
+        property="og:image"
+        content="https://xmas-jukebox.euans.space/og.png"
+      />
+
       {head.meta.map((m) => (
         <meta key={m.key} {...m} />
       ))}
