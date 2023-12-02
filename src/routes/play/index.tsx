@@ -9,11 +9,17 @@ import { Jukebox } from "~/components/jukebox/jukebox";
 import { clues } from "~/data/clues";
 import { checkClueAnswer } from "~/helpers/clue-check";
 import { useClues, useKnownAnswers } from "../layout";
+import { Instructions } from "~/components/instructions";
 
 export default component$(() => {
   const clues = useClues();
   const knownAnswers = useKnownAnswers();
-  return <Jukebox clues={clues.value} knownAnswers={knownAnswers.value} />;
+  return (
+    <>
+      <Instructions />
+      <Jukebox clues={clues.value} knownAnswers={knownAnswers.value} />
+    </>
+  );
 });
 
 export const head: DocumentHead = {

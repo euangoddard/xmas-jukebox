@@ -8,13 +8,9 @@ export default component$(() => {
       <h2>Love from Euan, Chloe, Eric & Alex</h2>
       <hr />
       <p>This year's Christmas card is a Christmas song recognition game.</p>
-      <p>
-        You must listen to the snippet of the tune and enter the name of the
-        song
-      </p>
       <p class="total-centering">
         <Link class="button-link" href="/play">
-          Play
+          Play game
         </Link>
       </p>
     </>

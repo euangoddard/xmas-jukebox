@@ -1,0 +1,22 @@
+.play {
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  display: inline-flex;
+  font-size: 2rem;
+  justify-content: center;
+  align-items: center;
+  padding: 0 0 0 6px;
+  border: none;
+  box-shadow: var(--neon-shadow);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.spaceLeft {
+  margin-inline-start: 1rem;
+}
+
+.spaceRight {
+  margin-inline-end: 1rem;
+}

@@ -17,4 +17,28 @@ export const clues: readonly Clue[] = [
     id: "4",
     answer: "Santa Claus is coming to town",
   },
+  {
+    id: "5",
+    answer: "Carol of the Bells",
+  },
+  {
+    id: "6",
+    answer: "Feliz Navidad",
+  },
+  {
+    id: "7",
+    answer: "I Wish It Could Be Christmas Everyday",
+  },
+  {
+    id: "8",
+    answer: "White Christmas",
+  },
+  {
+    id: "9",
+    answer: "Rockin Around the Christmas Tree",
+  },
+  {
+    id: "10",
+    answer: "Last Christmas",
+  },
 ];

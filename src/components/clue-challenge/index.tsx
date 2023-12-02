@@ -3,6 +3,7 @@ import { Form } from "@builder.io/qwik-city";
 import { type Clue } from "~/models/clue";
 import { useCheckAnswer } from "~/routes/play";
 import styles from "./clue-challenge.module.css";
+import { PlayButton } from "../play-button";
 
 interface ClueProps {
   clue: Clue;
@@ -41,16 +42,13 @@ export const ClueChallenge = component$<ClueProps>(
         <h2>Track {number}</h2>
         <div class={styles.content}>
           <audio src={`/clues/${clue.id}.m4a`} ref={audioRef} />
-          <button
-            class={styles.play}
+          <PlayButton
             onClick$={() => audioRef.value!.play()}
-            aria-label="Play tune"
-          >
-            ▶
-          </button>
+            spaceRight={true}
+          />
           {!!correctAnswer || checkAnswer.value?.success ? (
             <span class={styles.correct}>
-              {correctAnswer ?? checkAnswer.value?.answer}
+              {correctAnswer ?? checkAnswer.value?.answer} &nbsp;✅
             </span>
           ) : (
             form
