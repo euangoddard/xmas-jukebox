@@ -22,6 +22,10 @@
   position: relative;
 }
 
+.shrink {
+  flex-shrink: auto;
+}
+
 .button {
   background-color: lightgreen;
 }

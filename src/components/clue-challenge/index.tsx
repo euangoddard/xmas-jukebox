@@ -24,6 +24,7 @@ export const ClueChallenge = component$<ClueProps>(
             name="answer"
             required
             placeholder={`Title of track ${number}`}
+            class={styles.shrink}
           />
           <input type="hidden" name="clue" value={clue.id} />
 
