@@ -18,7 +18,7 @@ export const ClueChallenge = component$<ClueProps>(
 
     const form = (
       <Form action={checkAnswer}>
-        <div style={{ position: "relative" }}>
+        <div class={styles.fieldWrapper}>
           <input
             type="text"
             name="answer"
@@ -27,7 +27,11 @@ export const ClueChallenge = component$<ClueProps>(
           />
           <input type="hidden" name="clue" value={clue.id} />
 
-          <button type="submit" disabled={checkAnswer.isRunning}>
+          <button
+            type="submit"
+            disabled={checkAnswer.isRunning}
+            class={styles.button}
+          >
             Check
           </button>
           {checkAnswer.value?.failed && (
