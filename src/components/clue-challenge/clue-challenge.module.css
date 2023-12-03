@@ -1,11 +1,11 @@
 .error {
-  position: absolute;
-  top: 100%;
-  left: 0;
   color: red;
   font-family: var(--font-stack-sys);
   font-size: 0.875rem;
   font-weight: 500;
+  position: absolute;
+  top: 100%;
+  left: 0;
 }
 
 .correct {
@@ -18,12 +18,19 @@
 }
 
 .fieldWrapper {
-  display: flex;
+  display: inline-flex;
+  flex: 1 1 auto;
   position: relative;
 }
 
 .shrink {
-  flex-shrink: auto;
+  width: 200px;
+}
+
+@media screen and (min-width: 640px) {
+  .shrink {
+    width: auto;
+  }
 }
 
 .button {

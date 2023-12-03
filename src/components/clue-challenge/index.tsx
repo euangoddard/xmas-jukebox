@@ -17,8 +17,8 @@ export const ClueChallenge = component$<ClueProps>(
     const checkAnswer = useCheckAnswer();
 
     const form = (
-      <Form action={checkAnswer}>
-        <div class={styles.fieldWrapper}>
+      <>
+        <Form action={checkAnswer} class={styles.fieldWrapper}>
           <input
             type="text"
             name="answer"
@@ -38,8 +38,8 @@ export const ClueChallenge = component$<ClueProps>(
           {checkAnswer.value?.failed && (
             <aside class={styles.error}>Wrong answer!</aside>
           )}
-        </div>
-      </Form>
+        </Form>
+      </>
     );
 
     return (
