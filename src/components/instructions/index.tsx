@@ -4,7 +4,7 @@ import { PlayButton } from "../play-button";
 export const Instructions = component$(() => (
   <p>
     Use the <PlayButton spaceLeft={true} spaceRight={true} /> to listen to the
-    snippet of the tune, and, once your recognize it enter its name and press{" "}
+    snippet of the tune, and, once you recognize it enter its name and press{" "}
     <strong
       style={{
         textDecoration: "underline",
